@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>D'Planner</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+    
+    
+
+ 
+ <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-database.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-messaging.js"></script>
+
+
+<script>
+
+
+//Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBhBZL37IA_O8HY_y_K-Q-Tbns_Z4Q7_0w",
+    authDomain: "dplanner-e326b.firebaseapp.com",
+    databaseURL: "https://dplanner-e326b.firebaseio.com",
+    storageBucket: "dplanner-e326b.appspot.com",
+    messagingSenderId: "630689565419"
+  };
+  firebase.initializeApp(config);
+  
+  var rootRef = firebase.database().ref();
+  var database = firebase.database();
+</script>
+
+
+
+
+
+<script type="text/javascript" src="js/alex.js"></script>
+</head>
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body background="https://images4.alphacoders.com/451/thumb-1920-45196.jpg">
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card-2">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#class" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CLASS MATTERS</a>
+    <a href="#hw" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOMEWORK</a>
+    <a href="#cher" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TEACHERS' INFO</a>
+    
+  </div>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Home Image -->
+  <div class="w3-display-container w3-center">
+    <img src="http://i.imgur.com/PkxI1zs.jpg?1" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>D'Planner</h3>
+      <p><b>Designed Exclusively for 5C33</b></p>   
+    </div>
+  </div>
+
+
+  <!-- The Class Matters Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="width:100%" id="class">
+    <h2 class="w3-wide">CLASS MATTERS</h2>
+    <p class="w3-opacity"><b><i>The Essential</i></b></p>
+    <div class="w3-padding-22">
+      <div>
+        <p class="w3-codespan">Timetable</p>
+        <img src="http://i.imgur.com/JXjobH8.jpg?1" class="w3-margin-bottom" alt="Timetable" style="width:100%">
+      </div>
+      <div>
+        <p class="w3-codespan">CCE Venues</p>
+        <img src="http://i.imgur.com/5uRmdNr.jpg" class="w3-margin-bottom" alt="CCE" style="width:100%">
+      </div>
+  </div>
+
+  <!-- The Homework Section -->
+  <div class="w3-black" id="hw">
+    <div class="w3-container w3-content w3-padding-64" style="width:100%">
+      <h2 class="w3-wide w3-center">HOMEWORK</h2>
+      <p class="w3-opacity w3-center"><i><b>Get these done!!</b></i></p>
+      <iframe src="https://docs.google.com/spreadsheets/d/1DTuYEyLuIWJHhpSUkWyc2eTxThcEO51foKz4qVe25mU/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false" width=100% height="295"></iframe>
+      <p class="w3-medium">Here's The <a href="https://docs.google.com/a/dhs.sg/spreadsheets/d/1DTuYEyLuIWJHhpSUkWyc2eTxThcEO51foKz4qVe25mU/edit?usp=sharing" target="_blank">Homework</a> Spreadsheet</p>
+      <p class="w3-medium">Subject Reps Please Edit!</p>
+    </div>
+  </div>
+
+ 
+  <!-- The Teachers Section -->
+  <div class="w3-container w3-content w3-padding-64" style="width:100%" id="cher">
+    <h2 class="w3-wide w3-center">TEACHERS</h2>
+    <div class="w3-responsive">
+  		<table class="w3-table-all w3-hoverable">
+    	<tr>
+  			<th>Subject</th>
+  			<th>Name</th>
+  			<th>Locker</th>
+            <th>Phone</th>
+            <th>Rep</th>
+		</tr>
+		<tr>
+  			<td>GP</td>
+  			<td>Ms. Rathiy</td>
+  			<td>128</td>
+            <td>-</td>
+            <td>Ke Ning</td>
+		</tr>
+        <tr>
+  			<td>PW/Chem</td>
+  			<td>Ms. Ng Bei Ling Vina</td>
+  			<td>120</td>
+            <td>9757 8626</td>
+            <td>Zerong/Anthony</td>
+		</tr>
+        <tr>
+  			<td>Math</td>
+  			<td>Ms. Emmeline Lau</td>
+  			<td>-</td>
+            <td>9366 5750</td>
+            <td>Jun Jie</td>
+		</tr>
+        <tr>
+  			<td>Physics</td>
+  			<td>Mr. Tan Ing Keat</td>
+  			<td>97</td>
+            <td>-</td>
+            <td>Xiao Chen(Zoey)</td>
+		</tr>
+        <tr>
+  			<td>H1 Econs</td>
+  			<td>Mr. Wong Ting Ee</td>
+  			<td>-</td>
+            <td>9788 2168</td>
+            <td>Ee Heng</td>
+		</tr>
+        <tr>
+  			<td>H2 Econs</td>
+  			<td>Ms. Lim Hwee Teng</td>
+  			<td>8</td>
+            <td>9847 8080</td>
+            <td>Alex</td>
+		</tr>
+        <tr>
+  			<td>Computing</td>
+  			<td>Mr. Gi Soong Chee</td>
+  			<td>23</td>
+            <td>9768 7621</td>
+            <td>-</td>
+		</tr>
+        <tr>
+  			<td>Art</td>
+  			<td>Ms. Tan Yu Shi/Mr. Brian Lee/Ivan Ng</td>
+  			<td>5/123/-</td>
+            <td>9652 0159/9726 6863/9783 5513</td>
+            <td>-</td>
+		</tr>
+        <tr>
+  			<td>History</td>
+  			<td>Mr. Daniel Seng</td>
+  			<td>16</td>
+            <td>8818 3897</td>
+            <td>Gregory(5C37)</td>
+		</tr>
+ 	 	</table>
+	</div>
+
+
+
+  </div>
+	
+<!-- Feedback Form -->	
+	<form class="w3-container">
+
+	<label>Please Give Me Your Opinion on This Website!</label>
+	<input class="w3-input w3-border w3-round-large" type="text" id="feedback">
+
+	</form>
+		
+	<input type="submit" value="Submit" id="submit">
+
+      
+  
+<!-- End Page Content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-20 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <p class="w3-medium"><i>Made by: <a href="https://vimeo.com/207242496" target="_blank">A</a>lex Lin 5C33 (19)</i></p>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+  //Google Analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93229808-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
